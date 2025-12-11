@@ -15,7 +15,7 @@ public:
     Participant() = default;
     Participant(int id, const std::string &n) : name(n), participantID(id) {}
 
-    int getID() const { return participantID; }
+    int getid() const { return participantID; }
     const std::string &getName() const { return name; }
     const std::vector<int> &getRegisteredEvents() const { return registeredEvents; }
 
@@ -33,5 +33,6 @@ public:
         return os;
     }
 };
+
 
 #endif // PARTICIPANT_H
