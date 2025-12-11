@@ -11,7 +11,7 @@ string Participant::getName() const {
     return name;
 }
 
-int Participant::getID() const {
+int Participant::getid() const {
     return id;
 }
 
@@ -23,4 +23,5 @@ void Participant::addEvent(int eventID) {
 // Get all registered events
 const vector<int>& Participant::getRegisteredEvents() const {
     return registeredEvents;
+
 }
