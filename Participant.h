@@ -11,11 +11,11 @@ private:
 
 public:
     Participant() = default;
-    Participant(int id, const string &n) : name(n), id(id) {}
+    Participant(int id, const string &n);
 
-    int getid() const { return id; }
-    const string &getName() const { return name; }
-    const vector<int> &getRegisteredEvents() const { return registeredEvents; }
+    int getid() const;
+    const string &getName() const;
+    const vector<int> &getRegisteredEvents() const;
 
     void addEvent(int eventID) {
         registeredEvents.push_back(eventID);
@@ -31,6 +31,7 @@ public:
         return os;
     }
 };
+
 
 
 
