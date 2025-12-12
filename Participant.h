@@ -13,7 +13,7 @@ public:
     Participant() = default;
     Participant(int id, const string &n) : name(n), id(id) {}
 
-    int getid() const { return participantID; }
+    int getid() const { return id; }
     const string &getName() const { return name; }
     const vector<int> &getRegisteredEvents() const { return registeredEvents; }
 
@@ -27,10 +27,11 @@ public:
     }
 
     friend ostream &operator<<(ostream &os, const Participant &p) {
-        os << "Participant[ID=" << p.participantID << ", Name='" << p.name << "', Events=" << p.registeredEvents.size() << "]";
+        os << "Participant[ID=" << p.id << ", Name='" << p.name << "', Events=" << p.registeredEvents.size() << "]";
         return os;
     }
 };
+
 
 
 
