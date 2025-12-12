@@ -1,7 +1,8 @@
 #include<iostream>
 using namespace std;
 #include"Manager.h"
-
+#include"Events.h"
+#include"Participant"
 void Manager::addEvent(const Events& event) {
 	for(const Events& e:events)
 		if(e.getid()==event.getid())
