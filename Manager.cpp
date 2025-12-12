@@ -68,5 +68,19 @@ void Manager::listEventsSortedByParticipantCount()const {
 		cout << e.getid() << "-" << e.getname() << "-" << e.gettype() << "-" << "Participants: " << e.getParticipantCount() << endl;
 	}
 }
+ void Manager::printAllEvents() const {
+    for (const auto &e : events) {
+        cout <<"Event id: "<< e.getid() <<endl;
+        cout<<"Event name"<< e.getname() <<endl;
+        cout<<"Event type"<< e.gettype() <<endl;
+        cout<< "Participants: " << e.getParticipantCount()
+             << endl;
+    }
+}
+    void Manager::printAllParticipants() const {
+    for (const auto &p : participants) {
+        cout << p << endl;   
+    }
+	}
 
 
