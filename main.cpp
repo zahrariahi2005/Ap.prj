@@ -2,20 +2,6 @@
 #include "Manager.h"
 using namespace std;
 int main() {
-    void printAllEvents() const {
-    for (const auto &e : events) {
-        cout <<"Event id: "<< e.getid() <<endl;
-        cout<<"Event name"<< e.getname() <<endl;
-        cout<<"Event type"<< e.gettype() <<endl;
-        cout<< "Participants: " << e.getParticipantCount()
-             << endl;
-    }
-}
-    void printAllParticipants() const {
-    for (const auto &p : participants) {
-        cout << p << endl;   
-    }
-}
     Manager mgr;
 
     mgr.addEvent(Event(1, "C++ Workshop", "Workshop", 2));
@@ -71,3 +57,4 @@ int main() {
     return 0;
 
 }
+
