@@ -11,7 +11,7 @@ void Manager::addEvent(const Events& event) {
 }
 void Manager::addParticipant(const Participant& participant) {
 	for(const Participant& p: participants)
-		if(p.getid()== participants.getid())
+		if(p.getid()== participant.getid())
 			throw runtime_error("participant ID already exists.");
 	participants.push_back(participant);
 }
@@ -39,7 +39,7 @@ void Manager::registerParticipantToEvent(int participantID, int eventID) {
 		throw runtime_error("event's capacity is full");
 
 	e->addParticipant(p);
-	p->registerEvent(e);
+	p->registerEvent();
 }
 void Manager::listEventsSortedByType()const {
 	std::vector<Events> sorted = events;
@@ -72,8 +72,8 @@ void Manager::listEventsSortedByParticipantCount()const {
  void Manager::printAllEvents() const {
     for (const auto &e : events) {
         cout <<"Event id: "<< e.getid() <<endl;
-        cout<<"Event name"<< e.getname() <<endl;
-        cout<<"Event type"<< e.gettype() <<endl;
+        cout<<"Event name: "<< e.getname() <<endl;
+        cout<<"Event type: "<< e.gettype() <<endl;
         cout<< "Participants: " << e.getParticipantCount()
              << endl;
     }
