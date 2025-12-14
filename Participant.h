@@ -17,11 +17,12 @@ public:
     const string &getName() const;
     const vector<int>&getRegisteredEvents()const;
 
-    void addEvent(int eventID);
+    void addevent(int eventID);
     bool isRegisteredTo(int eventID) const;
 
     friend ostream &operator<<(ostream &os, const Participant &p); 
 };
+
 
 
 
