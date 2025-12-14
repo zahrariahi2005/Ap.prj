@@ -10,6 +10,7 @@ class Events {
 	int capacity;
 	vector<Participant*>Pr;
 public:
+    Events() = default;
 	Events(string name, int id, string type, int capacity);
 	string getname();
 	int getid()const;
