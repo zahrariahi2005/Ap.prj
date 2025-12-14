@@ -9,19 +9,19 @@ Events::Events(string n, int i, string t, int c)
 	type = t;
 	capacity = c;
 }
-string Events::getname() {
+string Events::getname()const{
 	return name;
 }
-int Events::getid()const {
+int Events::getid()const{
 	return id;
 }
-string Events::gettype() {
+string Events::gettype()const{
 	return type;
 }
-int Events::getcapacity() {
+int Events::getcapacity()const{
 	return capacity;
 }
-int Events::getParticipantCount() {
+int Events::getParticipantCount()const{
 	return Pr.size();
 }
 void Events::addParticipant(Participant* participant) {
