@@ -4,18 +4,17 @@ using namespace std;
 int main() {
     Manager mgr;
 
-    mgr.addEvent(Event(1, "C++ Workshop", "Workshop", 2));
-    mgr.addEvent(Event(2, "AI Seminar", "Seminar", 3));
-    mgr.addEvent(Event(3, "Music Night", "Entertainment", 1));
+    mgr.addEvent(Events("C++ Workshop",1,"Workshop",20));
+    mgr.addEvent(Events("AI Seminar",2,"Seminar",30));
+    mgr.addEvent(Events("Music Night",3,"Entertainment",100));
 
-    mgr.addParticipant(Participant(100, "Ali"));
-    mgr.addParticipant(Participant(101, "Zahra"));
-    mgr.addParticipant(Participant(102, "Saba"));
+   mgr.addParticipant(Participant("Ali",100));
+   mgr.addParticipant(Participant("Zahra",101));
+   mgr.addParticipant(Participant("Saba",102));
 
     try {
-        mgr.registerParticipantToEvent(100, 1); 
-        mgr.registerParticipantToEvent(101, 1); 
-
+        mgr.registerParticipantToEvent(100, 3); 
+        mgr.registerParticipantToEvent(101, 2); 
         mgr.registerParticipantToEvent(102, 1);
     } catch (const exception &ex) {
         cout << "Registration error: " << ex.what() <<endl;
@@ -42,19 +41,18 @@ int main() {
 
     cout << "All events (unsorted):"<<endl;
     mgr.printAllEvents();
-
-    cout << "Events sorted by type:"<<endl;
-    auto byType = mgr.listEventsSortedByType();
-    for (const auto &e : byType) cout << e <<endl;
-
-    cout << "Events sorted by participant count (descending)"<<endl;
-    auto byCount = mgr.listEventsSortedByParticipantCount();
-    for (const auto &e : byCount) cout << e <<endl";
-
+    
     cout << "All participants:"<<endl;
     mgr.printAllParticipants();
+    
+    cout << "Events sorted by type:"<<endl;
+    mgr.listEventsSortedByType();
 
+    cout << "Events sorted by participant count (descending)"<<endl;
+    mgr.listEventsSortedByParticipantCount();
+    
     return 0;
 
 }
+
 
