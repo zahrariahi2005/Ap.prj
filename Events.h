@@ -12,11 +12,11 @@ class Events {
 public:
     Events() = default;
 	Events(string name, int id, string type, int capacity);
-	string getname();
+	string getname()const;
 	int getid()const;
-	string gettype();
-	int getcapacity();
-	int getParticipantCount() ;
+	string gettype()const;
+	int getcapacity()const;
+	int getParticipantCount()const;
 	void addParticipant(Participant* participant);
 	const vector<Participant*>& getParticipants() const;
 };
