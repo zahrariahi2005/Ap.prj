@@ -11,8 +11,8 @@ string Participant::getName() const {
 int Participant::getid() const {
     return id;
 }
-void Participant::addevent(int eventID) {
-    registeredEvents.push_back(eventID);
+void Participant::addevent(Events*e) {
+    event.push_back(e);
 }
 
 const vector<int>& Participant::getRegisteredEvents() const {
@@ -27,4 +27,5 @@ bool Participant::isRegisteredTo(int eventID) const {
     }
     return false;
 }
-ostream& operator<<(ostream& os, const Participant& p) { os << "Participant[ID=" << p.id << ", Name='" << p.name << "', Events=" << p.registeredEvents.size() << "]"; return os; }
+ostream& operator<<(ostream& os, const Participant& p) { os << "Participant[ID=" << p.id << ", Name='" << p.name << "', Events=" << p.event.size() << "]"; return os; }
+
